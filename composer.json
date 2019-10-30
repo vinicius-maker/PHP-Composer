@@ -1,0 +1,37 @@
+{
+    "name": "vinicius-maker/buscador-cursos",
+    "description": "Projeto que busca os cursos da alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "vinicius-viana",
+            "email": "vinicius.viana@forseti.com.br"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.4",
+        "symfony/dom-crawler": "^4.3",
+        "symfony/css-selector": "^4.3"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Alura\\BuscadorDeCursos\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4",
+        "squizlabs/php_codesniffer": "^3.5",
+        "phan/phan": "^2.4"
+    },
+    "scripts": {
+        "test": "phpunit tests\\TestBuscadorDeCursos.php",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan --allow-polyfill-parser",
+        "check": ["@phan", "@cs", "@test"]
+
+    },
+    "scripts-descriptions": {
+        "check": "Roda as verificaçoes do codigo, PHAN, PHPCS, ṔHPUNIT"
+    }
+}
